@@ -1,0 +1,120 @@
+[advice]
+	pushNonFastForward = false
+	statusHints = false
+[alias]
+	a = add
+	aa = add -A
+	ae = add --edit
+	ai = add --interactive
+	amend = commit --amend -C HEAD
+	ap = add --patch
+	au = add --update
+	b = branch -vv
+	c = commit
+	ca = commit --amend
+	changes = diff --name-status -r
+	cm = commit --message
+	co = checkout
+	cpc = cherry-pick
+	d = diff
+	dc = diff --cached
+	div = divergence
+	ds = diff --staged
+	fml = reset HEAD --hard
+	graph = log --graph --abrev-commit --decorate --date=relative --format=format:'%C(bold cyan)%h%C(reset) - %C(green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n  %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+	h = help
+	irb = rebase --interactive
+	l = log --oneline --decorate
+	log = log --oneline --decorate
+	lg = log --graph --pretty=format:'%C(red)%h%C(reset) %an - %C(yellow)%d%C(reset) %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+	ls-ignored = ls-files --exclude-standard --ignored --others
+	m = merge
+	mm = merge --no-ff
+	msg = commit --allow-empty -m
+	p = cherry-pick -s
+	pick = cherry-pick
+	prune-remotes = "!for remote in `git remote`; do git remote prune $remote; done"
+	r = remote
+	rb = rebase
+	rba = rebase --abort
+	rbc = rebase --continue
+	rbs = rebase --skip
+	rh = reset --hard
+	ru = remote update --prune
+	s = status --short --branch
+	sl = shortlog
+	sm = submodule
+	sma = submodule add
+	smu = submodule update --init
+	st = stash
+	stl = stash list
+	stp = stash pop
+	undo = reset --soft HEAD^
+	wd = diff --word-diff="color"
+	wds = diff --word-diff="color" --staged
+	push = push --tags
+[apply]
+	whitespace = nowarn
+[branch]
+	autosetupmerge = true
+[color]
+	branch = false
+	diff = false
+	interactive = false
+	status = false
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+[core]
+	excludesfile = ~/.gitignore
+	whitespace = trailing-space,space-before-tab
+	quotepath = false
+[credential]
+	helper = osxkeychain
+[diff]
+	renames = copies
+	mnemonicprefix = true
+[diff "zip"]
+	textconv = unzip -c -a
+[fetch]
+	prune = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[github]
+	user = amokan
+[help]
+	autocorrect = 0
+[init]
+	defaultBranch = main
+[merge]
+	stat = true
+[pager]
+	color = true
+[pull]
+	rebase = false
+[push]
+	default = tracking
+[rerere]
+	enabled = 1
+[user]
+	name = "{{ .name }}"
+	email = "{{ .email }}"
+[include]
+	# Include aliases.
+  path = .gitconfig_aliases
+
+  # Include extra configuration (if any).
+  path = .gitconfig_local

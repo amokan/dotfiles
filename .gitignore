@@ -1,0 +1,6 @@
+.DS_Store
+*.gz
+dot_nano
+dot_oh-my-zsh
+dot_tmux
+node_modules
